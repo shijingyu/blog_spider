@@ -6,10 +6,10 @@ sys.setdefaultencoding( "utf-8" )
 
 
 class BlogSpider(Spider):
-    name = 'woodenrobot'
-    start_urls = ['https://woodenrobot.me']
+    name = 'shitouboy'
+    start_urls = ['https://blog.shitouboy.com']
 
     def parse(self, response):
-        titles = response.xpath('//a[@class="post-title-link"]/text()').extract()
+        titles = response.xpath('//h2[@class="post-title"]/text()').extract()
         for title in titles:
             print title.strip()
